@@ -1,0 +1,306 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Shadcn UI base variables */
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+/* Base variables (default theme) - Our custom themes will override Shadcn's */
+:root {
+  --color-bg-primary: #f8f9fa; /* Light background */
+  --color-text-primary: #212529; /* Dark text */
+  --color-primary-main: #2563eb; /* Blue-600 */
+  --color-primary-hover: #1d4ed8; /* Blue-700 */
+  --color-secondary-main: #14b8a6; /* Teal-500 */
+  --color-secondary-hover: #0f766e; /* Teal-600 */
+  --color-accent-main: #fbbf24; /* Amber-500 */
+  --color-card-bg: #ffffff; /* White card background */
+  --color-border: #e2e8f0; /* Light border */
+  --color-shadow: rgba(0, 0, 0, 0.1); /* Default shadow */
+
+  /* Map our custom theme variables to Shadcn's */
+  --background: var(--color-bg-primary);
+  --foreground: var(--color-text-primary);
+  --card: var(--color-card-bg);
+  --card-foreground: var(--color-text-primary);
+  --primary: var(--color-primary-main);
+  --primary-foreground: var(--color-card-bg); /* Assuming button text is card-bg */
+  --secondary: var(--color-secondary-main);
+  --secondary-foreground: var(--color-card-bg);
+  --accent: var(--color-accent-main);
+  --accent-foreground: var(--color-text-primary);
+  --border: var(--color-border);
+  --input: var(--color-border);
+  --ring: var(--color-primary-main);
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  --color-bg-primary: #1a202c; /* Dark blue-gray background */
+  --color-text-primary: #e2e8f0; /* Light gray text */
+  --color-primary-main: #6366f1; /* Indigo-500 */
+  --color-primary-hover: #4f46e5; /* Indigo-600 */
+  --color-secondary-main: #2dd4bf; /* Teal-400 */
+  --color-secondary-hover: #14b8a6; /* Teal-500 */
+  --color-accent-main: #facc15; /* Yellow-400 */
+  --color-card-bg: #2d3748; /* Darker blue-gray card */
+  --color-border: #4a5568; /* Gray-700 border */
+  --color-shadow: rgba(0, 0, 0, 0.3); /* Darker shadow */
+
+  /* Map our custom theme variables to Shadcn's */
+  --background: var(--color-bg-primary);
+  --foreground: var(--color-text-primary);
+  --card: var(--color-card-bg);
+  --card-foreground: var(--color-text-primary);
+  --primary: var(--color-primary-main);
+  --primary-foreground: var(--color-text-primary);
+  --secondary: var(--color-secondary-main);
+  --secondary-foreground: var(--color-text-primary);
+  --accent: var(--color-accent-main);
+  --accent-foreground: var(--color-text-primary);
+  --border: var(--color-border);
+  --input: var(--color-border);
+  --ring: var(--color-primary-main);
+}
+
+/* Emerald Theme */
+[data-theme="emerald"] {
+  --color-bg-primary: #ecfdf5; /* Light mint green background */
+  --color-text-primary: #064e3b; /* Dark green text */
+  --color-primary-main: #059669; /* Emerald-600 */
+  --color-primary-hover: #047857; /* Emerald-700 */
+  --color-secondary-main: #34d399; /* Emerald-400 */
+  --color-secondary-hover: #10b981; /* Emerald-500 */
+  --color-accent-main: #fcd34d; /* Amber-300 */
+  --color-card-bg: #d1fae5; /* Lighter emerald card */
+  --color-border: #a7f3d0; /* Emerald-200 border */
+  --color-shadow: rgba(0, 0, 0, 0.08); /* Subtle shadow */
+
+  /* Map our custom theme variables to Shadcn's */
+  --background: var(--color-bg-primary);
+  --foreground: var(--color-text-primary);
+  --card: var(--color-card-bg);
+  --card-foreground: var(--color-text-primary);
+  --primary: var(--color-primary-main);
+  --primary-foreground: var(--color-card-bg);
+  --secondary: var(--color-secondary-main);
+  --secondary-foreground: var(--color-text-primary);
+  --accent: var(--color-accent-main);
+  --accent-foreground: var(--color-text-primary);
+  --border: var(--color-border);
+  --input: var(--color-border);
+  --ring: var(--color-primary-main);
+}
+
+/* Glossy Theme */
+[data-theme="glossy"] {
+  --color-bg-primary: linear-gradient(135deg, #00C9FF, #92FE9D); /* Glossy gradient background */
+  --color-text-primary: #333333; /* Dark gray text */
+  --color-primary-main: #007bff; /* Bright blue */
+  --color-primary-hover: #0056b3; /* Darker blue */
+  --color-secondary-main: #6f42c1; /* Purple */
+  --color-secondary-hover: #5a2d9e; /* Darker purple */
+  --color-accent-main: #fd7e14; /* Orange */
+  --color-card-bg: #ffffff; /* White card */
+  --color-border: #ced4da; /* Light gray border */
+  --color-shadow: rgba(0, 0, 0, 0.05); /* Very subtle shadow */
+
+  /* Map our custom theme variables to Shadcn's */
+  --background: var(--color-bg-primary);
+  --foreground: var(--color-text-primary);
+  --card: var(--color-card-bg);
+  --card-foreground: var(--color-text-primary);
+  --primary: var(--color-primary-main);
+  --primary-foreground: var(--color-card-bg);
+  --secondary: var(--color-secondary-main);
+  --secondary-foreground: var(--color-card-bg);
+  --accent: var(--color-accent-main);
+  --accent-foreground: var(--color-text-primary);
+  --border: var(--color-border);
+  --input: var(--color-border);
+  --ring: var(--color-primary-main);
+}
+
+/* Cyberpunk Theme */
+[data-theme="cyberpunk"] {
+  --color-bg-primary: #0a0a0a; /* Near black background */
+  --color-text-primary: #00ffff; /* Cyan neon text */
+  --color-primary-main: #ff00ff; /* Magenta neon */
+  --color-primary-hover: #cc00cc; /* Darker magenta */
+  --color-secondary-main: #00ff00; /* Green neon */
+  --color-secondary-hover: #00cc00; /* Darker green */
+  --color-accent-main: #ffff00; /* Yellow neon */
+  --color-card-bg: #1a0a1a; /* Dark purple-black card */
+  --color-border: #ff00ff; /* Magenta neon border */
+  --color-shadow: rgba(255, 0, 255, 0.2); /* Magenta glow shadow */
+
+  /* Map our custom theme variables to Shadcn's */
+  --background: var(--color-bg-primary);
+  --foreground: var(--color-text-primary);
+  --card: var(--color-card-bg);
+  --card-foreground: var(--color-text-primary);
+  --primary: var(--color-primary-main);
+  --primary-foreground: var(--color-text-primary);
+  --secondary: var(--color-secondary-main);
+  --secondary-foreground: var(--color-text-primary);
+  --accent: var(--color-accent-main);
+  --accent-foreground: var(--color-text-primary);
+  --border: var(--color-border);
+  --input: var(--color-border);
+  --ring: var(--color-primary-main);
+}
+
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply font-sans antialiased;
+    background: var(--background);
+    color: var(--foreground);
+    transition: background 0.3s ease, color 0.3s ease; /* Smooth transition for theme changes */
+  }
+
+  /* Navigation-specific styles */
+  header {
+    transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  /* Style for header when scrolling down - implement with JavaScript if needed */
+  .header-scrolled {
+    @apply shadow-md bg-theme-card-bg/90 backdrop-blur-md;
+    transform: translateY(0);
+  }
+
+  /* When header is hidden (optional scroll-based hiding) */
+  .header-hidden {
+    transform: translateY(-100%);
+  }
+
+  /* Animation for mobile nav item hover */
+  @keyframes nav-item-pulse {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .nav-item-active {
+    background: linear-gradient(90deg, var(--color-primary-main), var(--color-secondary-main), var(--color-primary-main));
+    background-size: 200% 200%;
+    animation: nav-item-pulse 3s ease infinite;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+    color: var(--color-text-primary); /* Headings use primary text color */
+  }
+
+  h1 { @apply text-5xl; }
+  h2 { @apply text-4xl; }
+  h3 { @apply text-3xl; }
+  h4 { @apply text-2xl; }
+  h5 { @apply text-xl; }
+  h6 { @apply text-lg; }
+
+  a {
+    color: var(--color-primary-main);
+    transition: color 0.3s ease-in-out;
+  }
+  a:hover {
+    color: var(--color-primary-hover);
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-title {
+    @apply text-4xl font-bold mb-8 text-center;
+    color: var(--color-text-primary); /* Section titles use primary text color */
+  }
+
+  /* Removed .btn, .card, .project-card, .blog-post-card as Shadcn components will replace them */
+
+  /* Specific styling for header and footer to ensure they use theme colors */
+  header {
+    background-color: var(--color-card-bg);
+    box-shadow: 0 2px 4px -1px var(--color-shadow); /* Custom shadow for header */
+  }
+  header a {
+    color: var(--color-text-primary);
+  }
+  header a:hover {
+    color: var(--color-primary-main);
+  }
+
+  footer {
+    background-color: var(--color-card-bg);
+    box-shadow: inset 0 2px 4px 0 var(--color-shadow); /* Custom inner shadow for footer */
+  }
+}
